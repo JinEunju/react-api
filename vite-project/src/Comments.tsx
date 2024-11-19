@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 interface Comment {
   id: number;
   body: string;
-  username: string;
+  content: string;
   createdAt: string;
 }
 
@@ -45,9 +45,7 @@ const Comments = ({ postId }: { postId: number }) => {
       <ul>
         {comments.map((comment) => (
           <li key={comment.id}>
-            <p>
-              <strong>{comment.username}</strong>: {comment.body}
-            </p>
+            <p>{comment.content}</p>
             <p>
               <small>{new Date(comment.createdAt).toLocaleDateString()}</small>
             </p>

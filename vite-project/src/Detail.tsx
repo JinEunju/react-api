@@ -23,8 +23,9 @@ const Detail = () => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        const data: Post = await response.json();
-        setPost(data);
+        const data: { post: Post } = await response.json();
+        console.log(data);
+        setPost(data.post);
       } catch (error) {
         setError(error as Error);
       } finally {
